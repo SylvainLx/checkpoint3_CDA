@@ -20,6 +20,7 @@ export class Continent extends BaseEntity {
   name: string;
 
   @OneToMany(() => Country, (country) => country.continent, { cascade: true })
+  @Field(() => [Country])
   countries: Country[];
 }
 
